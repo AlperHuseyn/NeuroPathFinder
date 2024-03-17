@@ -57,4 +57,4 @@ Contributions to NeuroPathFinder are welcome! Whether it's implementing new algo
 
 ### License
 
-This project is licensed under the MIT License - see the LICENSE file for details.
+This project is licensed under the MIT License - see the [LICENSE file](https://github.com/AlperHuseyn/NeuroPathFinder/blob/main/license/LICENSE.md) for details.
