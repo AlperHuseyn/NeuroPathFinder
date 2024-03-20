@@ -31,8 +31,7 @@ Usage Examples:
    is_in_obstacle = is_point_in_obstacle(point, obstacles)
    print(f"Point {point} is in an obstacle: {is_in_obstacle}")
 
-Please ensure that any customization of start, goal points, or obstacles follows the expected 
-formats.
+Please ensure that any customization of start, goal points, or obstacles follows the expected formats.
 """
 
 from typing import List, Tuple
