@@ -19,7 +19,9 @@ Usage Examples:
    goal_point = (100, 50)
    plot_navigation_map(start_point=start_point, goal_point=goal_point)
 
-3. Checking if a point is within any obstacle (useful for dynamic obstacle addition or point validation):
+3. Checking if a point is within any obstacle (useful for dynamic obstacle addition or point 
+   validation):
+   
    point = (30, 45)
    obstacles = [
        [(0, 30), (0, 40), (7, 40), (7, 30)],
@@ -29,13 +31,15 @@ Usage Examples:
    is_in_obstacle = is_point_in_obstacle(point, obstacles)
    print(f"Point {point} is in an obstacle: {is_in_obstacle}")
 
-Please ensure that any customization of start, goal points, or obstacles follows the expected formats.
+Please ensure that any customization of start, goal points, or obstacles follows the expected 
+formats.
 """
 
-import matplotlib.pyplot as plt
-import matplotlib.patches as patches
-from matplotlib.path import Path
 from typing import List, Tuple
+import matplotlib.pyplot as plt
+from matplotlib import patches
+from matplotlib.path import Path
+
 
 # Define a type alias for a point and an obstacle
 Point = Tuple[float, float]
