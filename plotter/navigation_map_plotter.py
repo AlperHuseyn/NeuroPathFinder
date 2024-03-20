@@ -35,9 +35,14 @@ Please ensure that any customization of start, goal points, or obstacles follows
 import matplotlib.pyplot as plt
 import matplotlib.patches as patches
 from matplotlib.path import Path
+from typing import List, Tuple
+
+# Define a type alias for a point and an obstacle
+Point = Tuple[float, float]
+Obstacle = List[Point]
 
 
-def is_point_in_obstacle(point, obstacles):
+def is_point_in_obstacle(point: Point, obstacles: List[Obstacle]) -> bool:
     """
     Check if the given point is within any of the defined obstacles.
 
@@ -49,14 +54,15 @@ def is_point_in_obstacle(point, obstacles):
     bool: True if the point is within any obstacle, False otherwise.
     """
     for corners in obstacles:
-        # Create a path object from the corners of the obstacle
         obstacle_path = Path(corners)
         if obstacle_path.contains_point(point):
             return True
     return False
 
 
-def plot_navigation_map(start_point=(10, 50), goal_point=(110, 10)):
+def plot_navigation_map(
+    start_point: Point = (10, 50), goal_point: Point = (110, 10)
+) -> None:
     """
     Plot a navigation map with predefined obstacles, a customizable start point, and goal point.
 
@@ -68,7 +74,7 @@ def plot_navigation_map(start_point=(10, 50), goal_point=(110, 10)):
     The map is enclosed with a border to define the navigable area.
     """
     # Define the corner points of the obstacles as rectangles on the map
-    obstacle_corners = [
+    obstacle_corners: List[Obstacle] = [
         # Each tuple represents the bottom left and top right corners of rectangles
         [(0, 30), (0, 40), (7, 40), (7, 30)],
         [(15, 30), (15, 40), (26, 40), (26, 30)],
