@@ -66,7 +66,7 @@ def is_point_in_obstacle(point: Point, obstacles: List[Obstacle]) -> bool:
 
 def plot_navigation_map(
     start_point: Point = (10, 50), goal_point: Point = (110, 10)
-) -> None:
+) -> List[Obstacle]:
     """
     Plot a navigation map with predefined obstacles, a customizable start point, and goal point.
 
@@ -76,6 +76,9 @@ def plot_navigation_map(
 
     A red triangle indicates the start point, and a cyan triangle indicates the goal point.
     The map is enclosed with a border to define the navigable area.
+
+    Returns:
+    List[Obstacle]: A list of obstacles with their corner points.
     """
     # Define the corner points of the obstacles as rectangles on the map
     obstacle_corners: List[Obstacle] = [
@@ -137,6 +140,8 @@ def plot_navigation_map(
 
     # Display the plot with the obstacles and points
     plt.show()
+
+    return obstacle_corners
 
 
 if __name__ == "__main__":
